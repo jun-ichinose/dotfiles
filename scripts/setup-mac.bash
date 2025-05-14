@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -x
-## shellcheck ./scripts/common.bash
+## shellcheck disable=SC1091
 source "$(dirname "$0")/common.bash"
 
 [ "$(uname)" != "Darwin" ] && exit

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -eux
-# shellcheck source=./scripts/common.bash
+# shellcheck disable=SC1091
 source "$(dirname "$0")/common.bash"
 
 /bin/bash "$CUR_DIR/setup-apt.bash"
