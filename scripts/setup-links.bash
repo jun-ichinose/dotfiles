@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -x
-# shellcheck source=scripts/common.bash
+# shellcheck source-path=SCRIPTDIR
 source "$(dirname "$0")/common.bash"
 
 if [ ! -d "$HOME/.ssh" ]; then
