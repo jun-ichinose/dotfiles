@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
+# shellcheck shell=bash
 set -x
-## shellcheck ./scripts/common.bash
 source "$(dirname "$0")/common.bash"
 
 if [ ! -d "$HOME/.ssh" ]; then
@@ -15,7 +15,8 @@ mkdir -p \
     "$XDG_DATA_HOME/sheldon"
 
 if [ ! -d "$XDG_DATA_HOME/gnupg" ]; then
-    mkdir -m 700 -p "$XDG_DATA_HOME/gnupg"
+    mkdir -p "$XDG_DATA_HOME/gnupg"
+    chmod 700 "$XDG_DATA_HOME/gnupg"
 fi
 
 ln -sfv "$REPO_DIR/config/"* "$XDG_CONFIG_HOME"
