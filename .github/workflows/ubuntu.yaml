@@ -8,8 +8,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
       - name: Setup
-        run: bash ./install.sh
+        run: curl -sL https://jun-ichinose.github.io/dotfiles/install.sh | sh
