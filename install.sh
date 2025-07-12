@@ -1,5 +1,5 @@
 #!/bin/sh
-INSTALL_DIR="${INSTALL_DIR:-$HOME/repos/github.com/jun-ichinose/dotfiles}"
+INSTALL_DIR="${INSTALL_DIR:-$HOME/ghq/github.com/jun-ichinose/dotfiles}"
 
 if [ -d "$INSTALL_DIR" ]; then
     echo "Updating dotfiles..."
