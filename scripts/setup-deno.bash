@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -x
-# shellcheck source=./scripts/common.bash
+# shellcheck disable=SC1091
 source "$(dirname "$0")/common.bash"
 
 [ -n "$SKIP_DENO" ] && exit

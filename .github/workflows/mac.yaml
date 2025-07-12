@@ -8,5 +8,9 @@ jobs:
     runs-on: macOS-latest
 
     steps:
+      - name: Setup Homebrew
+        run: brew update
+      - name: Install Neovim
+        run: brew install neovim
       - name: Setup
-        run: curl -sL https://nagayamaryoga.github.io/dotfiles/install.sh | sh
+        run: curl -sL https://jun-ichinose.github.io/dotfiles/install.sh | sh

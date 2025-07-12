@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -x
-# shellcheck source=./scripts/common.bash
+# shellcheck disable=SC1091
 source "$(dirname "$0")/common.bash"
 
 [ "$(uname)" != "Darwin" ] && exit
@@ -17,6 +17,6 @@ echo "Updating Homebrew..."
 brew update
 
 echo "Installing Homebrew apps..."
-brew bundle install --file "${REPO_DIR}/config/homebrew/Brewfile" --no-lock --verbose
+brew bundle install --file "${REPO_DIR}/config/homebrew/Brewfile" --verbose
 
 true

@@ -8,3 +8,5 @@
     path = conf.d/gist.conf
     path = conf.d/github.conf
     path = conf.d/local.conf
+[commit]
+	gpgsign = false
