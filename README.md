@@ -9,3 +9,9 @@
 ```shell
 $ curl -sL https://jun-ichinose.github.io/dotfiles/install.sh | sh
 ```
+
+### Option
+
+```
+$ export HOMEBREW_CASK_OPTS="--appdir=$HOME/Applications"
+```
