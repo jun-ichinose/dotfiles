@@ -22,4 +22,4 @@ fi
 ln -sfv "$REPO_DIR/config/"* "$XDG_CONFIG_HOME"
 ln -sfv "$XDG_CONFIG_HOME/zsh/.zshenv" "$HOME/.zshenv"
 ln -sfv "$XDG_CONFIG_HOME/editorconfig/.editorconfig" "$HOME/.editorconfig"
-ln -sfnv "$XDG_DATA_HOME/vim" "$HOME/.vim"
+ln -sfnv "$XDG_CONFIG_HOME/vim" "$HOME/.vim"

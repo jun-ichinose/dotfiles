@@ -4,6 +4,12 @@ export LANG="ja_JP.UTF-8"
 # ignore /etc/zprofile, /etc/zshrc, /etc/zlogin, and /etc/zlogout
 setopt no_global_rcs
 
+### launchctl
+launchctl setenv XDG_CONFIG_HOME "$HOME/.config"
+launchctl setenv XDG_DATA_HOME "$HOME/.local/share"
+launchctl setenv XDG_STATE_HOME "$HOME/.local/state"
+launchctl setenv XDG_CACHE_HOME "$HOME/.cache"
+
 ### XDG
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
