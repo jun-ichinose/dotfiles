@@ -5,6 +5,15 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+### deno completion
+typeset -gU fpath
+
+deno_completion_dir="${ZDOTDIR:-${XDG_CONFIG_HOME:-$HOME/.config}/zsh}/completions"
+if [[ -d "$deno_completion_dir" ]]; then
+  fpath=("$deno_completion_dir" "${fpath[@]}")
+fi
+unset deno_completion_dir
+
 ### sheldon
 
 # source command override technique

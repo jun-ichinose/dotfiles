@@ -10,7 +10,18 @@ if type brew >/dev/null; then
     echo "Homebrew is already installed."
 else
     echo "Installing Homebrew..."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+fi
+
+if [ -x /opt/homebrew/bin/brew ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [ -x /usr/local/bin/brew ]; then
+    eval "$(/usr/local/bin/brew shellenv)"
+fi
+
+if ! type brew >/dev/null 2>&1; then
+    echo "ERROR: brew command not found after Homebrew installation."
+    exit 1
 fi
 
 echo "Updating Homebrew..."
