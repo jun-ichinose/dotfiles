@@ -13,7 +13,6 @@ if [[ -d "$deno_completion_dir" ]]; then
   fpath=("$deno_completion_dir" "${fpath[@]}")
 fi
 unset deno_completion_dir
-
 ### sheldon
 
 # source command override technique
