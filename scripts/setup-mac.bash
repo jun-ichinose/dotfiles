@@ -15,6 +15,9 @@ sudo nvram SystemAudioVolume=" "
 defaults write -g AppleScrollerPagingBehavior -bool true
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
+# Increase sound quality for Bluetooth headphones/headsets
+defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
+
 # Finder
 defaults write com.apple.finder AppleShowAllFiles -bool true  # Show all filename extensions in Finder.
 defaults write com.apple.finder ShowPathbar -bool true        # Show path bar.
@@ -65,6 +68,29 @@ defaults write com.apple.dock springboard-columns -int 9
 defaults write com.apple.dock springboard-rows -int 7
 defaults write com.apple.dock ResetLaunchPad -bool true
 defaults write com.apple.dock show-process-indicators -bool true
+
+# Hot corners 
+# Possible values:
+#  0: no-op
+#  2: Mission Control
+#  3: Show application windows
+#  4: Desktop
+#  5: Start screen saver
+#  6: Disable screen saver
+#  7: Dashboard
+# 10: Put display to sleep
+# 11: Launchpad
+# 12: Notification Center
+# 13: Lock Screen
+# Top left screen corner → Mission Control
+defaults write com.apple.dock wvous-tl-corner -int 2
+defaults write com.apple.dock wvous-tl-modifier -int 0
+# Top right screen corner → Desktop
+defaults write com.apple.dock wvous-tr-corner -int 4
+defaults write com.apple.dock wvous-tr-modifier -int 0
+# Bottom left screen corner → Start screen saver
+defaults write com.apple.dock wvous-bl-corner -int 5
+defaults write com.apple.dock wvous-bl-modifier -int 0
 
 # Menubar
 defaults write com.apple.controlcenter BatteryShowPercentage -bool false
