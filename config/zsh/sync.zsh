@@ -21,8 +21,6 @@ path=(
 
 # export homebrew env
 eval "$(/opt/homebrew/bin/brew shellenv zsh)"
-eval "$(sheldon source)"
-eval "$(zsh-defer init --global)"
 
 ### history
 export HISTFILE="$XDG_STATE_HOME/zsh_history"

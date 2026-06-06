@@ -9,5 +9,5 @@ echo "Installing Deno..."
 curl -fsSL https://deno.land/x/install/install.sh | CI=1 /bin/sh
 
 echo "Install Deno completions..."
-mkdir -p "$ZDOTDIR/completions"
-"$DENO_INSTALL/bin/deno" completions zsh >"$ZDOTDIR/completions/_deno.zsh"
+mkdir -p "$ZSH_COMPLETION_DIR"
+"$DENO_INSTALL/bin/deno" completions zsh >"$ZSH_COMPLETION_DIR/_deno"

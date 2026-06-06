@@ -8,7 +8,7 @@ fi
 ### deno completion
 typeset -gU fpath
 
-deno_completion_dir="${ZDOTDIR:-${XDG_CONFIG_HOME:-$HOME/.config}/zsh}/completions"
+deno_completion_dir="${ZSH_COMPLETION_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/zsh/completions}"
 if [[ -d "$deno_completion_dir" ]]; then
   fpath=("$deno_completion_dir" "${fpath[@]}")
 fi
@@ -24,7 +24,6 @@ function source {
 function ensure_zcompiled {
   local compiled="$1.zwc"
   if [[ ! -r "$compiled" || "$1" -nt "$compiled" ]]; then
-    echo "\033[1;36mCompiling\033[m $1"
     zcompile $1
   fi
 }

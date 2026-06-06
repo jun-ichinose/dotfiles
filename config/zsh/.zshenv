@@ -4,17 +4,19 @@ export LANG="ja_JP.UTF-8"
 # ignore /etc/zprofile, /etc/zshrc, /etc/zlogin, and /etc/zlogout
 setopt no_global_rcs
 
-### launchctl
-launchctl setenv XDG_CONFIG_HOME "$HOME/.config"
-launchctl setenv XDG_DATA_HOME "$HOME/.local/share"
-launchctl setenv XDG_STATE_HOME "$HOME/.local/state"
-launchctl setenv XDG_CACHE_HOME "$HOME/.cache"
-
 ### XDG
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CACHE_HOME="$HOME/.cache"
+
+### launchctl
+if [[ -o login ]] && command -v launchctl >/dev/null 2>&1; then
+  launchctl setenv XDG_CONFIG_HOME "$XDG_CONFIG_HOME" >/dev/null 2>&1 || true
+  launchctl setenv XDG_DATA_HOME "$XDG_DATA_HOME" >/dev/null 2>&1 || true
+  launchctl setenv XDG_STATE_HOME "$XDG_STATE_HOME" >/dev/null 2>&1 || true
+  launchctl setenv XDG_CACHE_HOME "$XDG_CACHE_HOME" >/dev/null 2>&1 || true
+fi
 
 ### zsh (same config is written in /etc/zshenv for macOS)
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
@@ -33,6 +35,7 @@ export GOPATH="$XDG_DATA_HOME/go"
 ### deno
 export DENO_INSTALL="$XDG_DATA_HOME/deno"
 export DENO_INSTALL_ROOT="$DENO_INSTALL"
+export ZSH_COMPLETION_DIR="$XDG_DATA_HOME/zsh/completions"
 
 ### ruby
 # export GEM_HOME="$XDG_DATA_HOME/gem"
