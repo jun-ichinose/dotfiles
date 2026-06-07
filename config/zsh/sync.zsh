@@ -16,11 +16,14 @@ path=(
   "$HOME/.local/bin"(N-/)
   "$GOPATH/bin"(N-/)
   "$DENO_INSTALL/bin"(N-/)
+  "$HOME/.local/share/mise/shims"(N-/)
   "$path[@]"
 )
 
 # export homebrew env
 eval "$(/opt/homebrew/bin/brew shellenv zsh)"
+# export mise env
+eval "$(mise activate zsh)"
 
 ### history
 export HISTFILE="$XDG_STATE_HOME/zsh_history"
