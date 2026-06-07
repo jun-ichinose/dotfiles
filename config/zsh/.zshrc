@@ -5,6 +5,15 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+### deno completion
+typeset -gU fpath
+
+deno_completion_dir="${ZSH_COMPLETION_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/zsh/completions}"
+if [[ -d "$deno_completion_dir" ]]; then
+  fpath=("$deno_completion_dir" "${fpath[@]}")
+fi
+unset deno_completion_dir
+
 ### sheldon
 
 # source command override technique
@@ -15,7 +24,6 @@ function source {
 function ensure_zcompiled {
   local compiled="$1.zwc"
   if [[ ! -r "$compiled" || "$1" -nt "$compiled" ]]; then
-    echo "\033[1;36mCompiling\033[m $1"
     zcompile $1
   fi
 }

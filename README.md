@@ -7,11 +7,11 @@
 ## Installation
 
 ```shell
-$ curl -sL https://jun-ichinose.github.io/dotfiles/install.sh | sh
+/bin/sh -c "$(curl -fsSL https://jun-ichinose.github.io/dotfiles/install.sh)"
 ```
 
 ### Option
 
 ```
-$ export HOMEBREW_CASK_OPTS="--appdir=$HOME/Applications"
+export HOMEBREW_CASK_OPTS="--appdir=$HOME/Applications"
 ```
