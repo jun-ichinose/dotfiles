@@ -9,6 +9,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CACHE_HOME="$HOME/.cache"
+export COLIMA_HOME="$XDG_CONFIG_HOME/colima"
 
 ### launchctl
 if [[ -o login ]] && command -v launchctl >/dev/null 2>&1; then
@@ -16,6 +17,7 @@ if [[ -o login ]] && command -v launchctl >/dev/null 2>&1; then
   launchctl setenv XDG_DATA_HOME "$XDG_DATA_HOME" >/dev/null 2>&1 || true
   launchctl setenv XDG_STATE_HOME "$XDG_STATE_HOME" >/dev/null 2>&1 || true
   launchctl setenv XDG_CACHE_HOME "$XDG_CACHE_HOME" >/dev/null 2>&1 || true
+  launchctl setenv COLIMA_HOME "$COLIMA_HOME" >/dev/null 2>&1 || true
 fi
 
 ### zsh (same config is written in /etc/zshenv for macOS)
