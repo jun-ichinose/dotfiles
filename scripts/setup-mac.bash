@@ -9,7 +9,7 @@ source "$(dirname "$0")/common.bash"
 osascript -e 'tell application "System Preferences" to quit'
 
 # Disable the sound effects on boot
-sudo nvram SystemAudioVolume=" "
+sudo nvram SystemAudioVolume=%80
 
 # Global
 defaults write -g AppleScrollerPagingBehavior -bool true
