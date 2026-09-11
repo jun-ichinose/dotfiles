@@ -142,6 +142,7 @@ defaults write com.apple.dock wvous-bl-corner -int 5
 defaults write com.apple.dock wvous-bl-modifier -int 0
 
 # Menubar
+defaults -currentHost write com.apple.Spotlight MenuItemHidden -int 1
 defaults write com.apple.controlcenter BatteryShowPercentage -bool false
 defaults write com.apple.menuextra.clock ShowSeconds -bool true
 
@@ -167,6 +168,9 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false   
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false    # Disable smart dashes.
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false  # Disable auto-correct.
 defaults write NSGlobalDomain NSAutomaticTextCompletionEnabled -bool false      # Disable text-completion.
+defaults write NSGlobalDomain com.apple.sound.beep.volume -float 0.15
+
+defaults write com.apple.inputmethod.Kotoeri JIMPrefCharacterForHalfWidthIntegerKey -bool true
 
 # To enable key-repeating
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false        # For VS Code

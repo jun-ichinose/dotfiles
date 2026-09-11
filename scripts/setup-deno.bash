@@ -6,7 +6,7 @@ source "$(dirname "$0")/common.bash"
 [ -n "$SKIP_DENO" ] && exit
 
 echo "Installing Deno..."
-curl -fsSL https://deno.land/x/install/install.sh | CI=1 /bin/sh
+curl -fsSL https://deno.land/x/install/install.sh | CI=1 /bin/sh -s -- --yes --no-modify-path
 
 echo "Install Deno completions..."
 mkdir -p "$ZSH_COMPLETION_DIR"
